@@ -1,9 +1,13 @@
+body {
+  margin: 0; }
+
 .logo-wrapper {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   width: 100%;
   height: 100vh;
-  align-items: center; }
+  align-items: center;
+  flex-direction: column; }
 
 .logo {
   width: 372px;
@@ -11,6 +15,9 @@
   position: relative;
   z-index: 1;
   overflow: hidden; }
+  .logo--small {
+    width: 186px;
+    height: 40px; }
   .logo__gradient {
     animation: animate-logo 4s linear infinite;
     position: absolute;
@@ -25,10 +32,13 @@
       width: 50%;
       height: inherit;
       z-index: 1;
-      background: linear-gradient(90deg, #F519B7 0%, #0085DE 25%, #00D08E 50%, #C47ED8 75%, #F519B7 100%); }
+      background: linear-gradient(90deg, var(--color1) 0%, var(--color2) 25%, var(--color3) 50%, var(--color4) 75%, var(--color1) 100%); }
     .logo__gradient:after {
       left: 50%; }
   .logo__mask {
+    display: block;
+    width: 100%;
+    height: auto;
     position: relative;
     z-index: 2; }
 
@@ -37,3 +47,8 @@
     transform: translateX(0); }
   to {
     transform: translateX(-50%); } }
+
+.controls {
+  position: absolute;
+  left: 10px;
+  top: 10px; }

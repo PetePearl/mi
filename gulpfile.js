@@ -34,7 +34,8 @@ const runServer = () => {
         notify: false
     });
 
-    watch('src/*.twig', series(buildTwigDev, reloadBrowserPage))
+    watch('src/**/*.twig', series(buildTwigDev, reloadBrowserPage))
+    watch('src/**/*.html', series(buildHtmlDev, reloadBrowserPage))
     watch('src/styles/**/*.scss', series(buildScssDev, reloadBrowserPage))
     watch('src/js/**/*.js', series(buildJsDev, reloadBrowserPage))
     watch('src/images/**/*.*', series(buildImagesDev, buildImagesWebpDev, reloadBrowserPage))
@@ -55,6 +56,18 @@ const buildTwigProd = (done) => {
         .pipe(replace('js/js.js', 'js/js.min.js'))
         .pipe(replace('styles/main.scss', 'styles/main.min.css'))
         .pipe(dest('./build/'));
+    done();
+}
+
+const buildHtmlDev = (done) => {
+    src('src/**/*.html')
+        .pipe(dest('dist/'))
+    done();
+}
+
+const buildHtmlProd = (done) => {
+    src('src/**/*.html')
+        .pipe(dest('build/'))
     done();
 }
 
@@ -141,6 +154,7 @@ exports.default = series(
     cleanDist,
     cleanBuild,
     parallel(
+        buildHtmlDev,
         buildTwigDev,
         buildScssDev,
         buildImagesDev,
@@ -154,6 +168,7 @@ exports.default = series(
 exports.build = series(
     cleanDist,
     cleanBuild,
+    buildHtmlProd,
     buildTwigProd,
     buildScssProd,
     buildImagesProd,

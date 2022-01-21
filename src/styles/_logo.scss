@@ -5,6 +5,11 @@
   z-index: 1;
   overflow: hidden;
 
+  &--small {
+    width: 186px;
+    height: 40px;
+  }
+
   &__gradient {
     animation: animate-logo 4s linear infinite;
     position: absolute;
@@ -21,11 +26,11 @@
       height: inherit;
       z-index: 1;
       background: linear-gradient(90deg,
-              #F519B7 0%,
-              #0085DE 25%,
-              #00D08E 50%,
-              #C47ED8 75%,
-              #F519B7 100%);
+              var(--color1) 0%,
+              var(--color2) 25%,
+              var(--color3) 50%,
+              var(--color4) 75%,
+              var(--color1) 100%);
     }
     &:after {
       left: 50%;
@@ -33,6 +38,9 @@
   }
 
   &__mask {
+    display: block;
+    width: 100%;
+    height: auto;
     position: relative;
     z-index: 2;
   }
