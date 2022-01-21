@@ -1,0 +1,50 @@
+.logo {
+  width: 372px;
+  height: 80px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+
+  &__gradient {
+    animation: animate-logo 4s linear infinite;
+    position: absolute;
+    z-index: 1;
+    width: 200%;
+    height: inherit;
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      width: 50%;
+      height: inherit;
+      z-index: 1;
+      background: linear-gradient(90deg,
+              #F519B7 0%,
+              #0085DE 25%,
+              #00D08E 50%,
+              #C47ED8 75%,
+              #F519B7 100%);
+    }
+    &:after {
+      left: 50%;
+    }
+  }
+
+  &__mask {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+
+@keyframes animate-logo {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
