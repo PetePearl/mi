@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script defer src="js/js.js"></script>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+
+<div id="app">
+    <div class="controls">
+        <label><input type="color" v-model="color1" v-on:change="changeColor"></label>
+        <label><input type="color" v-model="color2" v-on:change="changeColor"></label>
+        <label><input type="color" v-model="color3" v-on:change="changeColor"></label>
+        <label><input type="color" v-model="color4" v-on:change="changeColor"></label>
+
+        <div>
+            <code>
+                {
+                {{color1}}
+                {{color2}}
+                {{color3}}
+                {{color4}}
+                }
+            </code>
+
+            <div><label><input type="color" v-model="background" v-on:change="changeColor"></label> background: {{background}}</div>
+        </div>
+    </div>
+    <div class="logo-wrapper">
+        <div class="logo">
+            <div class="logo__gradient"></div>
+            <svg class="logo__mask" width="372" height="80" viewBox="0 0 372 80" fill="none"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M-43 -79.2975V158.873H414V-79.2975H-43ZM178.455 80.3751L150.083 32.1375L123.853 80.3751H87.4354L58.3969 33.2851L36.0229 80.3751H-0.39427L37.8319 0.00752967H74.2491L104.525 49.0525L131.184 0.00752967H167.601L214.872 80.3751H178.455ZM334.501 80.3751L303.892 31.2025L277.138 80.3751H240.721L193.831 0.00752967H230.248L258.287 48.0751L284.421 0.00752967H320.839L370.918 80.3751H334.501Z"
+                      fill="currentColor"/>
+            </svg>
+        </div>
+
+        <div class="logo logo--small">
+            <div class="logo__gradient"></div>
+            <svg class="logo__mask" width="372" height="80" viewBox="0 0 372 80" fill="none"
+                 xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_1_2)">
+                    <g clip-path="url(#clip1_1_2)">
+                        <path d="M-43 -79.2975V158.873H414V-79.2975H-43ZM178.455 80.3751L150.083 32.1375L123.853 80.3751H87.4354L58.3969 33.2851L36.0229 80.3751H-0.39427L37.8319 0.00752967H74.2491L104.525 49.0525L131.184 0.00752967H167.601L214.872 80.3751H178.455ZM334.501 80.3751L303.892 31.2025L277.138 80.3751H240.721L193.831 0.00752967H230.248L258.287 48.0751L284.421 0.00752967H320.839L370.918 80.3751H334.501Z"
+                              fill="currentColor"/>
+                    </g>
+                </g>
+                <defs>
+                    <clipPath id="clip0_1_2">
+                        <rect width="372" height="80" fill="white"/>
+                    </clipPath>
+                    <clipPath id="clip1_1_2">
+                        <rect width="457" height="238" fill="white" transform="translate(-43 -79)"/>
+                    </clipPath>
+                </defs>
+            </svg>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
